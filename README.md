@@ -8,7 +8,7 @@
 | | |
 |---|---|
 | Репозиторий | https://github.com/Nintendodias/meeting-room-booking |
-| Демо | _ссылка на Vercel_ |
+| Демо | https://meeting-room-booking-alpha-ten.vercel.app |
 | Переписка с AI | _ссылка или файл с чатом_ |
 
 ## Как запустить
