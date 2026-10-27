@@ -1,0 +1,130 @@
+.page {
+  width: min(100% - 2rem, 48rem);
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.heading {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.dateField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dateLabel {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.dateInput {
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: inherit;
+  font: inherit;
+}
+
+.blockedReason {
+  flex-basis: 100%;
+  margin: -0.5rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  text-align: right;
+}
+
+.card {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.scheduleHeading {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.scheduleHeading::first-letter {
+  text-transform: uppercase;
+}
+
+.subheading {
+  margin: 0.25rem 0 1rem;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.state {
+  margin: 0 0 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.error {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-danger);
+  border-left-width: 4px;
+  border-radius: var(--radius-md);
+  background: var(--color-danger-bg);
+  color: var(--color-danger-text);
+}
+
+.error p {
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .page {
+    width: calc(100% - 1.5rem);
+    padding-top: 1.25rem;
+  }
+
+  .heading {
+    font-size: 1.625rem;
+  }
+
+  .controls,
+  .dateField {
+    width: 100%;
+  }
+
+  .controls > button {
+    width: 100%;
+  }
+
+  .blockedReason {
+    text-align: left;
+  }
+
+  .card {
+    padding: 1rem 0.75rem;
+  }
+}

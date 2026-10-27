@@ -1,0 +1,150 @@
+.timeline {
+  --minute: 1.8px;
+  --gutter: 3.5rem;
+
+  position: relative;
+  height: calc(var(--total) * var(--minute));
+  margin: 0.75rem 0;
+  transition: opacity 150ms ease;
+}
+
+.timeline[data-loading] {
+  opacity: 0.6;
+}
+
+.hours {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hour {
+  position: absolute;
+  top: calc(var(--offset) * var(--minute));
+  left: 0;
+  right: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.hourLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+  padding-right: 0.5rem;
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.track {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--gutter);
+  right: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.segment {
+  position: absolute;
+  top: calc(var(--offset) * var(--minute));
+  height: calc(var(--duration) * var(--minute));
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.free {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.25rem 0.75rem;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent 0 6px,
+    var(--color-free-stripe) 6px 7px
+  );
+}
+
+.past {
+  background: var(--color-past-bg);
+}
+
+.freeLabel {
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+}
+
+.booked {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem 0.25rem 0.75rem;
+  border: 1px solid var(--color-booked-border);
+  border-left-width: 4px;
+  border-radius: var(--radius-sm);
+  background: var(--color-booked-bg);
+  color: var(--color-booked-text);
+}
+
+.bookingInfo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.5rem;
+  min-width: 0;
+}
+
+.range {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.untitled {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 0.375rem;
+}
+
+@media (max-width: 480px) {
+  .timeline {
+    --minute: 2.4px;
+    --gutter: 3rem;
+  }
+
+  .booked {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .bookingInfo {
+    flex-wrap: nowrap;
+    font-size: 0.875rem;
+  }
+
+  .actions :global(.button) {
+    min-height: 1.75rem;
+  }
+}
