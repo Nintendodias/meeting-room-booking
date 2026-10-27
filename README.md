@@ -7,7 +7,7 @@
 
 | | |
 |---|---|
-| Репозиторий | _ссылка на GitHub_ |
+| Репозиторий | https://github.com/Nintendodias/meeting-room-booking |
 | Демо | _ссылка на Vercel_ |
 | Переписка с AI | _ссылка или файл с чатом_ |
 
